@@ -27,75 +27,122 @@ header h1 {
 }
 
 
-/* --- VISTA 1: CATÁLOGO --- */
-
-#vista-catalogo {
-    display: block;
-    /* Visible por defecto */
+body {
+    font-family: 'Comic Neue', cursive;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* HEADER */
+header h1 {
+    color: #77ff6b;
+    font-size: 36px;
+    text-shadow: 2px 2px 0px #00000020;
+}
+
+/* CONTENEDOR */
+.container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* BARRA DE BÚSQUEDA */
 .search-bar {
     width: 100%;
-    padding: 12px;
+    padding: 16px 20px;
     margin-bottom: 30px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-    box-sizing: border-box;
+    border: none;
+    border-radius: 100px; /* SUPER redondeado */
+    font-size: px;
+    outline: none;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
 }
 
+/* EFECTO AL ESCRIBIR */
+.search-bar:focus {
+    transform: scale(1.03);
+    box-shadow: 0 0 20px rgba(49, 145, 21, 0.4);
+}
+
+/* PLACEHOLDER BONITO */
+.search-bar::placeholder {
+    color: #3e8305;
+    font-style: italic;
+}
+
+/* PRODUCTOS */
 .grid-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    gap: 25px;
 }
 
+/* TARJETA */
 .producto-card {
     background: white;
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
     text-align: center;
-    border: 1px solid #e0e0e0;
-    transition: transform 0.2s;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
 }
 
 .producto-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) scale(1.02);
+    border-color: #319115;
 }
 
+/* IMAGEN */
 .img-placeholder {
     width: 100%;
     height: 180px;
-    background-color: #e9ecef;
-    border-radius: 8px;
+    background: linear-gradient(135deg, #ffe0e0, #ffd6d6);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 60px;
     margin-bottom: 15px;
+    overflow: hidden;
 }
 
 .img-placeholder img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 8px;
 }
 
+/* BOTÓN */
 .btn-add {
-    background-color: #333;
+    background: linear-gradient(135deg, #319115, #319115);
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    padding: 12px 22px;
+    border-radius: 30px;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 15px;
     margin-top: 10px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
 }
 
 .btn-add:hover {
-    background-color: #555;
+    background: linear-gradient(135deg, #319115, #2ac952);
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.3);
+}
+
+/* EFECTO CLICK */
+.btn-add:active {
+    transform: scale(0.95);
 }
 
 
