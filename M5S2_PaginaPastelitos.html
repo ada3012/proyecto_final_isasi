@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pastelitos Compilines</title>
+    <link rel="stylesheet" href="../Proyecto_M5S2/estilos.css">
+</head>
+
+<body>
+
+    <header>
+        <img src="../../M5S2/Compilinos.jpg" style="max-width: 25vh; border-radius: 20px;" alt="Pastelito de Guayaba">
+    </header>
+
+    <div class="container">
+        <section id="vista-catalogo">
+            <input type="text" class="search-bar" placeholder="🔍 Buscar pastelitos...">
+
+            <div class="grid-productos">
+                <div class="producto-card">
+                    <div class="img-placeholder">
+                        <img src="../../M5S2/apa.jpg" alt="Pastelito de Guayaba">
+                    </div>
+                    <h3>Pastelito Ray Tracing</h3>
+                    <p><strong>$15.00</strong></p>
+                    <button class="btn-add" onclick="irAPago('Pastelito de Guayaba', 15.00)">Comprar</button>
+                </div>
+                <div class="producto-card">
+                    <div class="img-placeholder">🧁</div>
+                    <h3>Pastelito de Banton</h3>
+                    <p><strong>$10.00</strong></p>
+                    <button class="btn-add" onclick="irAPago('Pastelito de Banton', 10.00)">Comprar</button>
+                </div>
+                <div class="producto-card">
+                    <div class="img-placeholder">🍰</div>
+                    <h3>Rebanada Clásica</h3>
+                    <p><strong>$12.00</strong></p>
+                    <button class="btn-add" onclick="irAPago('Rebanada Clásica', 12.00)">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="vista-pago">
+            <button class="btn-regresar" onclick="volverCatalogo()">← Volver al catálogo</button>
+
+            <div class="checkout-container">
+                <div class="card">
+                    <div class="img-placeholder" id="pago-img">🥧</div>
+                    <h2 id="pago-titulo">Nombre del pastelito</h2>
+                    <p id="pago-precio" style="font-size: 20px; font-weight: bold;">$0.00</p>
+
+                    <div class="quantity-control">
+                        <label>Cantidad:</label>
+                        <button type="button" onclick="cambiarCantidad(-1)">-</button>
+                        <input type="number" id="cantidad" value="1" min="1" readonly>
+                        <button type="button" onclick="cambiarCantidad(1)">+</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Método de Pago</h3>
+                    <div class="payment-options">
+                        <label class="payment-box active" id="label-efectivo">
+                            <input type="radio" name="pago" value="efectivo" onchange="mostrarFormulario()" checked>
+                            <br>💵 Efectivo
+                        </label>
+                        <label class="payment-box" id="label-tarjeta">
+                            <input type="radio" name="pago" value="tarjeta" onchange="mostrarFormulario()">
+                            <br>💳 Tarjeta
+                        </label>
+                    </div>
+
+                    <div id="formulario-tarjeta" style="display: none;">
+                        <div class="form-group">
+                            <label>Detalle de la tarjeta</label>
+                            <input type="text" placeholder="Número de tarjeta">
+                        </div>
+                        <div class="row">
+                            <div class="form-group" style="flex: 2;">
+                                <label>Nombre</label>
+                                <input type="text" placeholder="Ej. Juan Pérez">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Vencimiento</label>
+                                <input type="text" placeholder="MM/AA">
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn-confirm">Confirmar Pedido</button>
+                    <div class="total-section">
+                        <span>Total</span>
+                        <span id="precio-total">$0.00</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let precioActual = 0;
+
+        // Cambiar a la vista de pago
+        function irAPago(nombre, precio) {
+            precioActual = precio;
+
+            // Actualizar textos en la vista de pago
+            document.getElementById('pago-titulo').innerText = nombre;
+            document.getElementById('pago-precio').innerText = '$' + precio.toFixed(2);
+            document.getElementById('precio-total').innerText = '$' + precio.toFixed(2);
+            document.getElementById('cantidad').value = 1;
+
+            // Ocultar catálogo, mostrar pago
+            document.getElementById('vista-catalogo').style.display = 'none';
+            document.getElementById('vista-pago').style.display = 'block';
+        }
+
+        // Volver al catálogo
+        function volverCatalogo() {
+            document.getElementById('vista-pago').style.display = 'none';
+            document.getElementById('vista-catalogo').style.display = 'block';
+        }
+
+        // Cambiar cantidad
+        function cambiarCantidad(cambio) {
+            let inputCantidad = document.getElementById('cantidad');
+            let nuevaCantidad = parseInt(inputCantidad.value) + cambio;
+
+            if (nuevaCantidad >= 1) {
+                inputCantidad.value = nuevaCantidad;
+                let total = (nuevaCantidad * precioActual).toFixed(2);
+                document.getElementById('precio-total').innerText = '$' + total;
+            }
+        }
+
+        // Mostrar/Ocultar formulario de tarjeta
+        function mostrarFormulario() {
+            let opciones = document.getElementsByName('pago');
+            let formTarjeta = document.getElementById('formulario-tarjeta');
+            let labelEfectivo = document.getElementById('label-efectivo');
+            let labelTarjeta = document.getElementById('label-tarjeta');
+
+            for (let opcion of opciones) {
+                if (opcion.checked) {
+                    if (opcion.value === 'tarjeta') {
+                        formTarjeta.style.display = 'block';
+                        labelTarjeta.classList.add('active');
+                        labelEfectivo.classList.remove('active');
+                    } else {
+                        formTarjeta.style.display = 'none';
+                        labelEfectivo.classList.add('active');
+                        labelTarjeta.classList.remove('active');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>
