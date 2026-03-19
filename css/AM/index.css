@@ -1,0 +1,35 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+body.dark-mode .container {
+  color: #cfd8dc;
+}
+
+body.dark-mode .section {
+  background: #1e1e1e;
+}
+
+body.dark-mode .section-title {
+  color: #90caf9;
+  border-bottom: 2px solid #90caf9;
+}
+
+body.dark-mode menu {
+  background-color: #0d1b2a;
+}
+
+body.dark-mode menu ul li a {
+  color: #eceff1;
+}
+
+body.dark-mode menu ul li a:hover {
+  background-color: #bb86fc;
+  color: #000;
+}
