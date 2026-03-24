@@ -126,7 +126,7 @@ class Menu extends HTMLElement {
           <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
           <ul class="nav-list">
             <li>
-              <img src="multimedia/logo_1er.png" class="primer_logo" alt="logo" />
+              <img src="multimedia/assets/pas_in.png" class="primer_logo" alt="logo" style="width: 80px; height: auto;" />
             </li>
             <li><a href="index.html">MENU</a></li>
             <li><a href="tu_pas.html">TU PASTELITO</a></li>

@@ -22,13 +22,32 @@
 
         <div class="div_text">
             <p>Descubre nuestra amplia selección de pastelitos artesanales, hechos con ingredientes de la más alta calidad.</p>
-            <button onclick="abrirModal()">Iniciar Sesión</button>
-            <h1>No tienes cuenta? Regístrate <a href="./M5S2_Registro.html">aquí</a></h1>
+         <button onclick="abrirModal()">Iniciar Sesión</button>
+            <h1>No tienes cuenta? Regístrate <a href="./registro.html">aquí</a></h1>
         </div>
 
     </div>
 
+    <!-- MODAL LOGIN -->
+<div id="modalLogin" class="modal">
+
+    <div class="modal_contenido">
+        <span class="cerrar" onclick="cerrarModal()">&times;</span>
+
+        <h2>Iniciar Sesión</h2>
+
+        <input type="email" id="correo" placeholder="Correo"><br><br>
+        <input type="password" id="contrasena" placeholder="Contraseña"><br><br>
+
+        <button onclick="iniciarSesion()">Entrar</button>
+
+    </div>
+
+</div>
+
+
     
     <script src="./js/AM/menu.js"></script>
+    <script src="./js/AM/login.JS"></script>
 </body>
 </html>

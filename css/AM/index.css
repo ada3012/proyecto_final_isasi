@@ -37,6 +37,38 @@ body {
     width: 50%;
 }
 
+.text{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.modal_contenido {
+    background: white;
+    width: 300px;
+    padding: 20px;
+    margin: 10% auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cerrar {
+    float: right;
+    font-size: 25px;
+    cursor: pointer;
+}
+
 body.dark-mode {
   background-color: #121212;
   color: white;
@@ -67,3 +99,5 @@ body.dark-mode menu ul li a:hover {
   background-color: #bb86fc;
   color: #000;
 }
+
+
