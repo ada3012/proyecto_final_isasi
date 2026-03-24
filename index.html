@@ -8,7 +8,8 @@
 </head>
 <body>
     <main-menu></main-menu>
-    <div class="text">
+
+    <div class="central" style=" text-align: center;">
         <h1>Bienvenidos a HARDWARE-CAKE</h1>
         <p>¡Disfruta de nuestros deliciosos pastelitos!</p>
     </div>
@@ -17,7 +18,7 @@
     <div class="div_central">
 
         <div class="div_img">
-        <img src="./multimedia/assets/pas_in.png" alt="Pastelito" class="pastelito_img">
+        <img src="./multimedia/assets/cake.png" alt="Pastelito" class="pastelito_img">
         </div>
 
         <div class="div_text">
@@ -29,21 +30,15 @@
     </div>
 
     <!-- MODAL LOGIN -->
-<div id="modalLogin" class="modal">
-
-    <div class="modal_contenido">
-        <span class="cerrar" onclick="cerrarModal()">&times;</span>
-
-        <h2>Iniciar Sesión</h2>
-
-        <input type="email" id="correo" placeholder="Correo"><br><br>
-        <input type="password" id="contrasena" placeholder="Contraseña"><br><br>
-
-        <button onclick="iniciarSesion()">Entrar</button>
-
+     <div id="modalLogin" class="modal">
+        <div class="modal_contenido">
+            <span class="cerrar" onclick="cerrarModal()">&times;</span>
+            <h1 style="color: black;">Iniciar Sesión</h1>
+            <input type="email" id="correo" placeholder="Correo"><br><br>
+            <input type="password" id="contrasena" placeholder="Contraseña"><br><br>
+            <button onclick="iniciarSesion()">Entrar</button>
+        </div>
     </div>
-
-</div>
 
 
     

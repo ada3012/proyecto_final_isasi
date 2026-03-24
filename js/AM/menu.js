@@ -5,7 +5,7 @@ class Menu extends HTMLElement {
 
     shadow.innerHTML = `
       <style>
-        @import url("../css/fonts.css");
+        @import url("../../css/AM/fonts.css");
 
         menu {
           background-color: #2c3e50;
@@ -19,7 +19,7 @@ class Menu extends HTMLElement {
           display: none;
           background: none;
           border: none;
-          color: #ecf0f1;
+          color: #ecf0f1; 
           font-size: 24px;
           padding: 10px 20px;
           cursor: pointer;
@@ -126,7 +126,7 @@ class Menu extends HTMLElement {
           <button class="menu-toggle" aria-label="Abrir menú">&#9776;</button>
           <ul class="nav-list">
             <li>
-              <img src="multimedia/assets/pas_in.png" class="primer_logo" alt="logo" style="width: 80px; height: auto;" />
+              <img src="multimedia/assets/cake.png" class="primer_logo" alt="logo" style="width: 80px; height: auto;" />
             </li>
             <li><a href="index.html">MENU</a></li>
             <li><a href="tu_pas.html">TU PASTELITO</a></li>
