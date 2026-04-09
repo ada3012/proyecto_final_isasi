@@ -1,27 +1,39 @@
 function iniciarSesion() {
 
-    let correo = document.getElementById("correo").value;
-    let contrasena = document.getElementById("contrasena").value;
+    let correo = document.getElementById("correo").value.trim();
+    let contrasena = document.getElementById("contrasena").value.trim();
 
-    fetch("../../php/login.php", {
+    if (correo === "" || contrasena === "") {
+        alert("Por favor completa todos los campos");
+        return;
+    }
 
-        method: "POST",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}`
-    })
-    .then(res => res.json())
-    .then(data => {
+   fetch("/M5S2_pastelitos/proyecto_final_isasi/php/login.php", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+    },
+    body: `correo=${encodeURIComponent(correo)}&contrasena=${encodeURIComponent(contrasena)}`
+})
 
-        if (data.status === "ok") {
-            window.location.href = "./M5S2.html";
-        } else {
-            alert(data.mensaje);
-        }
+.then(res => res.json())
+.then(json => {
+    console.log(json);
 
-    });
+    if (json.status === "ok") {
+        window.location.href = "./M5S2_PaginaPastelitos.html";
+    } else {
+        alert(json.mensaje);
+    }
+})
+.catch(error => {
+    console.error("Error:", error);
+    alert("Error en la conexión o respuesta inválida");
+});
+
 }
+
+
 
 function abrirModal() {
     document.getElementById("modalLogin").style.display = "block";

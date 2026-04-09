@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 require "config.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,4 +43,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     $conn->close();
 }
-?>
