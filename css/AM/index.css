@@ -7,7 +7,7 @@ html{
 }
 
 body {
-  background-color:#5aa431;
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
   color: #000000;
   padding: 0;
   margin: 0;
@@ -34,11 +34,19 @@ body {
     height: auto;
 }
 
+.text_in{
+    width: 90%;
+    text-align: center;
+    max-width: 2000px;
+    font-size: 28px;}
+
 .div_text{
+    display: flex;
     justify-content: center;
-    align-items: center;
     height: 40dvh;
     width: 50%;
+    flex-direction: column;
+    align-items: center;
 }
 
 
@@ -69,15 +77,6 @@ body {
     cursor: pointer;
 }
 
-body.dark-mode {
-  background-color: #121212;
-  color: white;
-}
-
-body.dark-mode .container {
-  color: #cfd8dc;
-}
-
 body.dark-mode .section {
   background: #1e1e1e;
 }
@@ -98,4 +97,24 @@ body.dark-mode menu ul li a {
 body.dark-mode menu ul li a:hover {
   background-color: #bb86fc;
   color: #000;
+}
+
+body.dark-mode .container {
+  color: #cfd8dc;
+}
+
+body.dark-mode {
+  background: #121212 !important;
+  color: white;
+}
+
+body.dark-mode .boton_in{
+    background-color: #502ded;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
 }
