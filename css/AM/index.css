@@ -4,10 +4,12 @@ html{
     padding: 0;
     margin: 0;
     font-family: Montserrat-Regular;
+    height: 100%;
+    width: 100%;
 }
 
 body {
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  background: linear-gradient(135deg, #21e2a93d, #9857ff38);
   color: #000000;
   padding: 0;
   margin: 0;
@@ -49,6 +51,16 @@ body {
     align-items: center;
 }
 
+.boton_in{
+    background: linear-gradient(135deg, #319115, #319115);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 40px;
+    cursor: pointer;
+    margin-top: 20px;
+}
 
 
 .modal {
@@ -104,17 +116,11 @@ body.dark-mode .container {
 }
 
 body.dark-mode {
-  background: #121212 !important;
-  color: white;
+  background: linear-gradient(80deg, #000000, #1a0033, #013b06);
+  color: rgb(255, 255, 255);
 }
 
 body.dark-mode .boton_in{
     background-color: #502ded;
     color: white;
-    border: none;
-    padding: 15px 30px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
 }
