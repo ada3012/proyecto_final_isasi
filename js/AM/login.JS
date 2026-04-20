@@ -21,7 +21,7 @@ function iniciarSesion() {
     console.log(json);
 
     if (json.status === "ok") {
-        window.location.href = "./M5S2_PaginaPastelitos.html";
+        window.location.href = "./pastelitos.html";
     } else {
         alert(json.mensaje);
     }
@@ -34,20 +34,20 @@ function iniciarSesion() {
 }
 
 
-
 function abrirModal() {
-    document.getElementById("modalLogin").style.display = "block";
+    document.getElementById("modalLogin").classList.add("mostrar");
 }
 
 function cerrarModal() {
-    document.getElementById("modalLogin").style.display = "none";
+    document.getElementById("modalLogin").classList.remove("mostrar");
 }
 
 // cerrar si se da click afuera
 window.onclick = function(event) {
     let modal = document.getElementById("modalLogin");
     if (event.target === modal) {
-        modal.style.display = "none";
+        modal.classList.remove("mostrar");
     }
 }
+
 

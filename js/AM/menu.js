@@ -5,7 +5,7 @@ class Menu extends HTMLElement {
 
     shadow.innerHTML = `
       <style>
-        @import url("../../css/AM/fonts.css");
+        @import url("./css/AM/fonts.css");
 
         menu {
           background-color: #2c3e50;
