@@ -1,14 +1,21 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f6f8;
-    color: #333;
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+}
+
+/* BODY */
+body {
+    font-family: 'Comic Neue', cursive;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color: #333;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+/* HEADER */
 header {
     text-align: center;
     margin-bottom: 30px;
@@ -16,112 +23,83 @@ header {
 }
 
 header h1 {
-    color: #4a3b32;
-    font-size: 32px;
-    margin: 0;
-}
-
-.container {
-    max-width: 1000px;
-    width: 100%;
-}
-
-body {
-    font-family: 'Comic Neue', cursive;
-    background: linear-gradient(135deg, #fdfbfb, #ebedee);
-    color: #333;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-/* HEADER */
-
-header h1 {
     color: #77ff6b;
-    font-size: 36px;
-    text-shadow: 2px 2px 0px #00000020;
+    font-size: 40px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    letter-spacing: 2px;
 }
-
 
 /* CONTENEDOR */
-
 .container {
     max-width: 1100px;
     width: 100%;
 }
 
-
-/* BARRA DE BÚSQUEDA */
-
+/* 🔍 BARRA DE BÚSQUEDA MEJORADA */
 .search-bar {
     width: 100%;
-    padding: 16px 20px;
-    margin-bottom: 30px;
+    padding: 18px 25px;
+    margin-bottom: 35px;
     border: none;
-    border-radius: 100px;
-    /* SUPER redondeado */
-    font-size: px;
+    border-radius: 50px;
+    font-size: 16px;
     outline: none;
-    background: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
 }
 
-
-/* EFECTO AL ESCRIBIR */
-
-.search-bar:focus {
-    transform: scale(1.03);
-    box-shadow: 0 0 20px rgba(49, 145, 21, 0.4);
+/* EFECTO HOVER */
+.search-bar:hover {
+    transform: scale(1.02);
 }
 
+/* EFECTO FOCUS PRO */
+.search-bar:focus {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px rgba(49, 145, 21, 0.5);
+}
 
-/* PLACEHOLDER BONITO */
-
+/* PLACEHOLDER */
 .search-bar::placeholder {
     color: #3e8305;
     font-style: italic;
+    opacity: 0.7;
 }
 
-
-/* PRODUCTOS */
-
+/* GRID PRODUCTOS */
 .grid-productos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 30px;
 }
 
-
-/* TARJETA */
-
+/* TARJETA PRODUCTO */
 .producto-card {
-    background: white;
+    background: rgba(255,255,255,0.9);
     border-radius: 20px;
     padding: 20px;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     text-align: center;
     border: 2px solid transparent;
     transition: all 0.3s ease;
 }
 
+/* HOVER TARJETA */
 .producto-card:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-10px) scale(1.03);
     border-color: #319115;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-
 /* IMAGEN */
-
 .img-placeholder {
     width: 100%;
     height: 180px;
     background: linear-gradient(135deg, #21e2a93d, #9857ff38);
-    border-radius: 12px;
+    border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,14 +113,12 @@ header h1 {
     object-fit: cover;
 }
 
-
 /* BOTÓN */
-
 .btn-add {
     background: linear-gradient(135deg, #319115, #319115);
     color: white;
     border: none;
-    padding: 12px 22px;
+    padding: 12px 24px;
     border-radius: 30px;
     cursor: pointer;
     font-size: 15px;
@@ -152,26 +128,24 @@ header h1 {
     transition: all 0.3s ease;
 }
 
+/* HOVER BOTÓN */
 .btn-add:hover {
     background: linear-gradient(135deg, #319115, #2ac952);
     transform: scale(1.1);
-    box-shadow: 0 5px 15px rgb(0 255 187 / 30%);
+    box-shadow: 0 8px 20px rgba(0,255,187,0.3);
 }
 
-
-/* EFECTO CLICK */
-
+/* CLICK BOTÓN */
 .btn-add:active {
     transform: scale(0.95);
 }
 
-
-/* --- VISTA 2: PAGO (Oculta por defecto) --- */
-
+/* VISTA PAGO */
 #vista-pago {
     display: none;
 }
 
+/* BOTÓN REGRESAR */
 .btn-regresar {
     background: none;
     border: none;
@@ -182,25 +156,26 @@ header h1 {
     text-decoration: underline;
 }
 
+/* CHECKOUT */
 .checkout-container {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
 }
 
+/* TARJETAS */
 .card {
-    background: white;
-    border-radius: 12px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 15px;
     padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
     flex: 1;
     min-width: 300px;
     border: 1px solid #e0e0e0;
 }
 
-
-/* Controles de cantidad */
-
+/* CANTIDAD */
 .quantity-control {
     display: flex;
     align-items: center;
@@ -209,25 +184,28 @@ header h1 {
 }
 
 .quantity-control button {
-    width: 30px;
-    height: 30px;
-    border: 1px solid #ccc;
-    background: white;
-    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 6px;
     cursor: pointer;
+    transition: 0.2s;
+}
+
+.quantity-control button:hover {
+    background: #ddd;
 }
 
 .quantity-control input {
-    width: 40px;
+    width: 45px;
     text-align: center;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 26px;
+    border-radius: 6px;
+    height: 28px;
 }
 
-
-/* Opciones de pago */
-
+/* PAGOS */
 .payment-options {
     display: flex;
     gap: 10px;
@@ -237,16 +215,23 @@ header h1 {
 .payment-box {
     flex: 1;
     border: 2px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 10px;
     padding: 15px;
     text-align: center;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.payment-box:hover {
+    transform: scale(1.05);
 }
 
 .payment-box.active {
     border-color: #5cb85c;
+    box-shadow: 0 0 10px rgba(92,184,92,0.4);
 }
 
+/* FORMULARIOS */
 .form-group {
     margin-bottom: 15px;
 }
@@ -263,15 +248,16 @@ header h1 {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
+    border-radius: 6px;
 }
 
+/* FILAS */
 .row {
     display: flex;
     gap: 10px;
 }
 
+/* BOTÓN CONFIRMAR */
 .btn-confirm {
     width: 100%;
     background-color: #5cb85c;
@@ -280,16 +266,22 @@ header h1 {
     padding: 15px;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     margin-top: 15px;
+    transition: 0.3s;
 }
 
+.btn-confirm:hover {
+    transform: scale(1.05);
+}
+
+/* TOTAL */
 .total-section {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
