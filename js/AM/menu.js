@@ -131,7 +131,6 @@ class Menu extends HTMLElement {
             </li>
             <li><a href="index.html">MENU</a></li>
             <li><a href="tu_pas.html">TU PASTELITO</a></li>
-            <li><a href="contacto.html">CONTACTO</a></li>
             <li><button id="modo-btn" class="boton_mod_dark">Modo nocturno</button></li>
           </ul>
         </menu>
