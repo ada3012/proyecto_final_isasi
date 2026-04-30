@@ -1,21 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/AM/registro.css">
     <title>Document</title>
 </head>
-<body>
-    <h1>Registro</h1>
-    <form action="php/registro.php" method="post">
-        <input type="text" name="nombre" placeholder="Nombre" required><br><br>
-        <input type="email" name="correo" placeholder="Correo" required><br><br>
-        <input type="tel" name="telefono" placeholder="Teléfono" required><br><br>
-        <input type="text" name="direccion" placeholder="Dirección" required><br><br>
-        <input type="password" name="contrasena" placeholder="Contraseña" required><br><br>
-        <button type="submit">Registrarse</button>
-    </form>
 
-    <script src="./js/AM/login.JS"></script>
+<body>
+    <div class="central" style=" text-align: center;">
+        <h1>Bienvenidos a HARDWARE-CAKE</h1>
+        <p>Registrate para conocernos!</p>
+    </div>
+
+    <div class="div_central">
+
+        <div class="div_img">
+            <img src="./multimedia/assets/cake.png" alt="Pastelito" class="pastelito_img">
+        </div>
+
+        <div class="div_text">
+            <form id="formRegistro" class="form">
+                <h4>Escribe tu nombre aqui:</h4>
+                <input type="text" name="nombre" placeholder="Nombre" required>
+                <h4>Escribe tu correo aqui:</h4>
+                <input type="email" name="correo" placeholder="Correo" required>
+                <h4>Escribe tu teléfono aqui:</h4>
+                <input type="tel" name="telefono" placeholder="Teléfono" required>
+                <h4>Escribe tu dirección aqui:</h4>
+                <input type="text" name="direccion" placeholder="Dirección" required>
+                <h4>Escribe tu contraseña aqui:</h4>
+                <input type="password" name="contrasena" placeholder="Contraseña" required>
+                <button class="boton_in" type="submit">Registrarse</button>
+            </form>
+        </div>
+
+    </div>
+
+
+
+
+    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+        <div style="background:white; padding:20px; margin:15% auto; width:300px; text-align:center;">
+            <p id="mensajeModal"></p>
+            <button id="btnCerrar">Cerrar</button>
+            <button id="btnInicio" style="display:none;">Volver al menú principal</button>
+        </div>
+    </div>
+
+
+    <script src="./js/AM/registro.js"></script>
 </body>
+
 </html>

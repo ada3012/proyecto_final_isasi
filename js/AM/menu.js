@@ -1,7 +1,7 @@
 class Menu extends HTMLElement {
   constructor() {
     super();
-    const shadow = this.attachShadow({ mode: 'open' });
+    const shadow = this.attachShadow({ mode: "open" });
 
     shadow.innerHTML = `
       <style>
@@ -13,7 +13,7 @@ class Menu extends HTMLElement {
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           margin: 0;
           position: relative;
-              border-radius: 67px;
+              border-radius: 25px;
         }
 
         .menu-toggle {
@@ -53,7 +53,7 @@ class Menu extends HTMLElement {
         }
 
         .nav-list li a:hover {
-          background-color: rgb(100, 134, 219);
+          background-color: rgb(26, 87, 27);
           color: #fff;
           transform: scale(1.1);
           box-shadow: 0 4px 10px rgba(73, 227, 238, 0.4);
@@ -66,12 +66,13 @@ class Menu extends HTMLElement {
         }
 
         .nav-list li.active a {
-          background-color: #3498db;
+          background-color: rgb(11, 110, 13);
           color: white;
           transform: scale(1.1);
-          box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+          box-shadow: 0 4px 10px rgba(52, 219, 122, 0.4);
         }
-          .boton_mod_dark {
+
+        .boton_mod_dark {
           margin-left: 10px;
           padding: 8px 16px; 
           border-radius: 20px; 
@@ -79,47 +80,49 @@ class Menu extends HTMLElement {
           background-color: #3498db; 
           color: white; 
           font-weight: bold; cursor: pointer;"
-  }
+          }
+          
+          @media (max-width: 768px) {
+          .menu-toggle {
+          display: block;
+          }
 
-    @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-  .nav-list {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-    flex-direction: column;
-    background-color: #2c3e50;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    z-index: 999;
-    padding: 0;
-  }
+          .nav-list {
+          max-height: 0;
+          opacity: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease, opacity 0.4s ease;
+          flex-direction: column;
+          background-color: #2c3e50;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          right: 0;
+          z-index: 999;
+          padding: 0;
+          }
 
-  .nav-list.show {
-    max-height: 500px; /* Ajusta según la cantidad de elementos */
-    opacity: 1;
-    padding: 20px 0;
-  }
+          .nav-list.show {
+          max-height: 500px; /* Ajusta según la cantidad de elementos */
+          opacity: 1;
+          padding: 20px 0;
+          }
 
-  .nav-list li {
-    margin: 10px 0;
-    text-align: center;
-  }
-    .nav-list li img{
-    margin-right: 0px;
-    }
-}
+          .nav-list li {
+            margin: 10px 0;
+            text-align: center;
+          }
 
-     @media (max-width: 1024px) {
-     menu{
-    text-align: center;
-  }
-  }
+          .nav-list li img{
+            margin-right: 0px;
+          }
+            }
+
+          @media (max-width: 1024px) {
+            menu{
+            text-align: center;
+            }
+            }
       </style>
 
       <slot>
@@ -131,7 +134,6 @@ class Menu extends HTMLElement {
             </li>
             <li><a href="index.html">MENU</a></li>
             <li><a href="tu_pas.html">TU PASTELITO</a></li>
-            <li><a href="contacto.html">CONTACTO</a></li>
             <li><button id="modo-btn" class="boton_mod_dark">Modo nocturno</button></li>
           </ul>
         </menu>
@@ -151,14 +153,17 @@ class Menu extends HTMLElement {
 
     const navLinks = shadow.querySelectorAll("menu ul li a");
 
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
       const linkHref = link.getAttribute("href");
       if (linkHref) {
         const linkPath = linkHref.split("/").pop();
         const linkUrl = new URL(linkHref, window.location.origin);
         const linkIdProyecto = linkUrl.searchParams.get("idproyecto");
 
-        if (pathname === linkPath || (idProyecto && idProyecto === linkIdProyecto)) {
+        if (
+          pathname === linkPath ||
+          (idProyecto && idProyecto === linkIdProyecto)
+        ) {
           link.parentElement.classList.add("active");
         }
       }
@@ -167,43 +172,43 @@ class Menu extends HTMLElement {
 
   setupToggleMenu() {
     const shadow = this.shadowRoot;
-    const toggleButton = shadow.querySelector('.menu-toggle');
-    const navList = shadow.querySelector('.nav-list');
+    const toggleButton = shadow.querySelector(".menu-toggle");
+    const navList = shadow.querySelector(".nav-list");
 
-    toggleButton.addEventListener('click', () => {
-      navList.classList.toggle('show');
+    toggleButton.addEventListener("click", () => {
+      navList.classList.toggle("show");
     });
 
     // Opcional: cerrar el menú al hacer clic en un enlace (móvil)
-    const links = shadow.querySelectorAll('.nav-list a');
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('show');
+    const links = shadow.querySelectorAll(".nav-list a");
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        navList.classList.remove("show");
       });
     });
   }
 
   setupDarkModeToggle() {
-  const btn = this.shadowRoot.querySelector("#modo-btn");
+    const btn = this.shadowRoot.querySelector("#modo-btn");
 
-  if (!btn) return;
+    if (!btn) return;
 
-  const updateText = (isDark) => {
-    btn.textContent = isDark ? "Modo claro" : "Modo nocturno";
-  };
+    const updateText = (isDark) => {
+      btn.textContent = isDark ? "Modo claro" : "Modo nocturno";
+    };
 
-  // Al cargar: aplicar modo oscuro si estaba activado
-  const isDark = localStorage.getItem("dark-mode") === "true";
-  document.body.classList.toggle("dark-mode", isDark);
-  updateText(isDark);
+    // Al cargar: aplicar modo oscuro si estaba activado
+    const isDark = localStorage.getItem("dark-mode") === "true";
+    document.body.classList.toggle("dark-mode", isDark);
+    updateText(isDark);
 
-  // Al hacer clic en el botón
-  btn.addEventListener("click", () => {
-    const isNowDark = document.body.classList.toggle("dark-mode");
-    localStorage.setItem("dark-mode", isNowDark);
-    updateText(isNowDark);
-  });
+    // Al hacer clic en el botón
+    btn.addEventListener("click", () => {
+      const isNowDark = document.body.classList.toggle("dark-mode");
+      localStorage.setItem("dark-mode", isNowDark);
+      updateText(isNowDark);
+    });
+  }
 }
-}
 
-customElements.define('main-menu', Menu);
+customElements.define("main-menu", Menu);
