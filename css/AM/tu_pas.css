@@ -1,0 +1,83 @@
+@import url("./fonts.css");
+
+html{
+    padding: 0;
+    margin: 0;
+    font-family: Montserrat-SemiBold;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+  background: linear-gradient(135deg, #21e2a93d, #9857ff38);
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+.container_div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 100%;
+
+}
+
+.container_text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    width: 50%;
+    flex-direction: column;
+}
+
+.container_img{
+   justify-content: center;
+    align-items: center;
+    height: 46dvh;
+    width: 50%;
+    display: flex;
+}
+
+.pastelito_img{
+    max-width: 50%;
+    height: auto;
+}
+
+body.dark-mode .section {
+  background: #1e1e1e;
+}
+
+body.dark-mode .section-title {
+  color: #90caf9;
+  border-bottom: 2px solid #90caf9;
+}
+
+body.dark-mode menu {
+  background-color: #0d1b2a;
+}
+
+body.dark-mode menu ul li a {
+  color: #eceff1;
+}
+
+body.dark-mode menu ul li a:hover {
+  background-color: #bb86fc;
+  color: #000;
+}
+
+body.dark-mode .container {
+  color: #cfd8dc;
+}
+
+body.dark-mode {
+  background: linear-gradient(80deg, #000000, #1a0033, #013b06);
+  color: rgb(255, 255, 255);
+}
+
+body.dark-mode .boton_in{
+    background-color: #502ded;
+    color: white;
+}
