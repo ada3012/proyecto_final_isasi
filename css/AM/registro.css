@@ -15,6 +15,10 @@ body {
   margin: 0;
 }
 
+h4{
+    margin: 9px;
+}
+
 .div_central{
     display: flex;
     justify-content: center;
@@ -29,6 +33,13 @@ body {
     height: 46dvh;
     width: 50%;
     display: flex;
+}
+
+.form{
+    display: contents;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
 }
 
 .pastelito_img{
@@ -47,6 +58,7 @@ body {
     justify-content: center;
     width: 50%;
     flex-direction: column;
+    align-items: center;
 }
 
 .boton_in{
@@ -141,6 +153,11 @@ input:focus{
     float: right;
     font-size: 25px;
     cursor: pointer;
+}
+
+.boton_div {
+    display: flex;
+    justify-content: center;
 }
 
 body.dark-mode .section {
