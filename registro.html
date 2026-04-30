@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <main-menu></main-menu>
     <div class="central" style=" text-align: center;">
         <h1>Bienvenidos a HARDWARE-CAKE</h1>
         <p>Registrate para conocernos!</p>
@@ -32,7 +33,9 @@
                 <input type="text" name="direccion" placeholder="Dirección" required>
                 <h4>Escribe tu contraseña aqui:</h4>
                 <input type="password" name="contrasena" placeholder="Contraseña" required>
-                <button class="boton_in" type="submit">Registrarse</button>
+                <div class="boton_div">
+                    <button class="boton_in" type="submit">Registrarse</button>
+                </div>
             </form>
         </div>
 
@@ -41,7 +44,8 @@
 
 
 
-    <div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
+    <div id="modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);">
         <div style="background:white; padding:20px; margin:15% auto; width:300px; text-align:center;">
             <p id="mensajeModal"></p>
             <button id="btnCerrar">Cerrar</button>
@@ -51,6 +55,7 @@
 
 
     <script src="./js/AM/registro.js"></script>
+    <script src="./js/AM/menu.js"></script>
 </body>
 
 </html>
